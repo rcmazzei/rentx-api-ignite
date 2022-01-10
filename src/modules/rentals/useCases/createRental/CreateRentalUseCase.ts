@@ -15,7 +15,7 @@ class CreateRentalUseCase {
   constructor(
     @inject("RentalsRepository")
     private rentalsRepository: IRentalsRepository,
-  ) {}
+  ) { }
 
   async execute(data: IRequest): Promise<Rental> {
     const rental = await this.rentalsRepository.create(data);

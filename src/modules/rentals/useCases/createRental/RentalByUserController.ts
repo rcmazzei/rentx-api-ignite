@@ -10,7 +10,7 @@ class RentalByUserController {
 
     const rentals = await rentalByUserUseCase.execute(id);
 
-    return response.status(201).json(rentals);
+    return response.status(200).json(rentals);
   }
 }
 
