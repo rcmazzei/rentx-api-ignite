@@ -13,7 +13,7 @@ const app = express();
 
 app.use(express.json());
 app.use(router);
-import {} from '../../../../tmp/avatar'
+import { } from '../../../../tmp/avatar'
 app.use('/files', express.static(resolve(__dirname, "..", "..", "..", "..", 'tmp', 'avatar')));
 
 app.use(
