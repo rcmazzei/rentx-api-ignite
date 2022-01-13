@@ -35,16 +35,19 @@ class RentalByCarUseCase {
 
     let unavailable_dates = [];
 
-    rentals.forEach(rental => {
-      const formattedDates =
-        eachDayOfInterval({
-          start: rental.start_date,
-          end: rental.end_date
-        })
-          .map(date => format(date, 'yyyy-MM-dd'));
+    if (rentals.length > 0) {
+      rentals.forEach(rental => {
+        const formattedDates =
+          eachDayOfInterval({
+            start: rental.start_date,
+            end: rental.end_date
+          })
+            .map(date => format(date, 'yyyy-MM-dd'));
 
-      unavailable_dates = [...unavailable_dates, ...formattedDates];
-    });
+        unavailable_dates = [...unavailable_dates, ...formattedDates];
+      });
+    }
+
 
     return {
       id,
